@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Olá amigos
 
 Esse repo é destinado aos estudos da Web API de Speech, uma funcionalidade incrível que usa o Speech nativo do SO.
@@ -9,3 +10,7 @@ O presente projeto está com um servidorzinho (servlet) chamado **http-server**,
 - *Dentro da pasta:* Executamos o famosos **npm install** no terminal;
 
 - *Quando terminado:* ``` http-server public ```
+=======
+# estudos-speech-synthesis-api
+Estudos com a Speech Synthesis API
+>>>>>>> 4d31a4080a2e98392095059176241d96b9238dad
