@@ -1,0 +1,65 @@
+@font-face {
+  font-family: 'rockoflf';
+  src: url(../fonts/rockoflf.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'caecilia';
+  src: url(../fonts/caecilia-lt-std-45-light.otf) format('opentype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'caecilia';
+  src: url(../fonts/caecilia-lt-std-85-heavy.otf) format('opentype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 700;
+  src: url(../fonts/quicksand-bold-700.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+* { outline: none; }
+
+body {
+    font-family: "Quicksand";
+    padding: 1rem;
+    overflow-x: hidden;
+    
+    counter-reset: quotes;
+}
+
+blockquote {
+    font-style: italic;
+    font-weight: normal;
+}
+
+    blockquote::before {
+        content: counter(quotes) ' - "';
+        counter-increment: quotes;
+    }
+
+    blockquote::after {
+        content: '" ';
+    }
+
+textarea {
+    border-radius: 10px;
+    font-size: 1rem;
+    width: 100%;
+    height: 90px;
+
+    resize: none;
+}
+
+span.sucesso {
+    color: #3c763d;
+}
+
+span.erro {
+    color: #a94442;
+}

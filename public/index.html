@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="./assets/css/button.css">
+
+    <title>Testando o Speech Synthesis</title>
+</head>
+<body>
+    <span class="status-speech"></span>
+    <h1>Configurações do Text Speech</h1>
+    <p>Algumas congigurações que estão disponíveis.</p>
+
+    <p>Vozes disponíveis: <select name="voices" id="voiceSelect"></select></p>
+	<p>
+        Ajustar volume: 
+        <input type="range" max="1" step="0.1" min="0" name="ctr_volume" id="ctr_volume" oninput="outputUpdate(value, 'volume')">
+        <output id="volume">0.6</output>
+    </p>
+	<p>
+        Ajustar rate: <input type="range" max="2" step="0.1" min="0" name="ctr_rate" id="ctr_rate" oninput="outputUpdate(value, 'rate')">
+        <output id="rate">1</output>
+    </p>
+	<p>
+        Ajustar pitch: <input type="range" max="2" step="0.1" min="0" name="ctr_pitch" id="ctr_pitch" oninput="outputUpdate(value, 'pitch')">
+        <output id="pitch">1</output>
+    </p>
+  
+    <hr/>
+    <div>
+        <textarea placeholder="Escreva sua frase aqui..." id="txtAreaSuaFrase" maxlength="100"></textarea>
+        <p>
+            <button class="button" onclick="speech.adicionarFrase()">Adicionar frase</button>
+        </p>
+    </div>
+    <h1>Fila de Frases</h1>
+    <p>Algumas frases para o PC recitar para nós.</p>
+
+    <div id="__container-phrases"></div>
+    
+    <div class="__container-buttons">
+        <button onclick="speech.getTexts()" class="button play">Fale mais</button>
+    </div>
+
+    <script src="./assets/js/index.js"></script>
+
+    <script>
+        let speech = new WebAPISpeech();
+        function outputUpdate(vol, node) {
+            if (node == 'volume') {
+                document.querySelector('#volume').value = vol;
+            } else if (node == 'rate') {
+                document.querySelector('#rate').value = vol;
+            } else if (node == 'pitch') {
+                document.querySelector('#pitch').value = vol;
+            }
+        }
+
+        let spanStatus = document.querySelector('.status-speech');
+        if (typeof speechSynthesis === 'undefined') {
+            spanStatus.setAttribute("class", "erro");
+            spanStatus.innerHTML = "Estamos tendo problemas ao suportar o Speech Synthesis, tente novamente mais tarde.";
+        } else {
+            spanStatus.setAttribute("class", "sucesso");
+            spanStatus.innerHTML = "Suporta o Speech Synthesis :) ";
+        }
+    </script>
+</body>
+</html>

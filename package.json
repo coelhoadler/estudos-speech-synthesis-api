@@ -1,0 +1,19 @@
+{
+  "name": "estudos-speech-synthesis-api",
+  "version": "1.0.0",
+  "description": "Estudos com a Speech Synthesis API para a minha primeira postagem.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coelhoadler/estudos-speech-synthesis-api.git"
+  },
+  "author": "Adler Coelho",
+  "license": "ISC",
+  "homepage": "",
+  "devDependencies": {
+    "http-server": "^0.10.0"
+  }
+}
